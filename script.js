@@ -42,10 +42,12 @@ const process = data => {
     meals.forEach(meal => {
         const newDiv = document.createElement("div");
         newDiv.className = "food-item";
+        newDiv.addEventListener('click', () => {
+            displayFoodDetails(meal.idMeal);
+        });
         const mealInfo = `
             <img src="${meal.strMealThumb}" alt="pic">
             <h3>${meal.strMeal}</h3>
-            <button onclick='displayFoodDetails("${meal.idMeal}")'>Details</button>
         `;
         newDiv.innerHTML = mealInfo;
         mainSection.appendChild(newDiv);
