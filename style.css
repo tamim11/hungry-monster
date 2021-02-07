@@ -51,6 +51,11 @@ h1 {
 	grid-gap: 20px;
 }
 
+#details-section {
+	margin: 50px;
+	padding: 20px;
+}
+
 .food-item {
 	border-radius: 10px;
 	background-color: beige;

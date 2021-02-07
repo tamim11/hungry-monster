@@ -11,6 +11,7 @@ const displayFoodDetails = id => {
         .then(res => res.json())
         .then(data => {
             detailsSection.innerHTML = "";
+            // fetched api with id.so only one element.so we take 0'th index of array 
             const meal = data["meals"][0];
             const detailsDiv = document.createElement("div");
             const detailsInfo = `
@@ -21,12 +22,21 @@ const displayFoodDetails = id => {
         `;
             detailsDiv.innerHTML = detailsInfo;
             detailsSection.appendChild(detailsDiv);
+            detailsSection.style.border = "5px dashed blue";
+            detailsSection.style.margin = "50px";
+            detailsSection.style.padding = "20px";
         });
 }
 
 const process = data => {
     mainSection.innerHTML = ""; // this line clears previously searched items
+    detailsSection.innerHTML = "";
+    detailsSection.style = "None";
     const meals = data["meals"];
+    if (meals === null) {
+        alert("Didn't find amy food.Invalid search.Try again please.");
+        return;
+    }
     meals.forEach(meal => {
         const newDiv = document.createElement("div");
         newDiv.className = "food-item";
