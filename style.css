@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header-flex {
+	display: flex;
+	justify-content: space-around;
+	background-color: #D7D7AF;
+}
+
+.ul-flex {
+	display: flex;
+	list-style-type: none;
+}
+
+.ul-flex > li {
+	
+	margin: 20px;
+}
+
+h1 {
+	margin: 20px;
+}
+
+#input-field {
+	font-size: 20px;
+	padding: 10px;
+}
+
+.search-section {
+	width: 95vw;
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+#btn {
+	width: 120px;
+	font-size: 18px;
+	color: white;
+	background-color: plum;
+	cursor: pointer;
+	border: none;
+}
+
+#main {
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-gap: 20px;
+}
+
+.food-item {
+	border-radius: 10px;
+	background-color: beige;
+	margin: 10px;
+}
+
+img {
+	width: 350px;
+}
