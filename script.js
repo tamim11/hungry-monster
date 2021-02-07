@@ -1,16 +1,16 @@
+// consts for input and event handing
 const inputField = document.getElementById("input-field");
 const button = document.getElementById("btn");
 const mainSection = document.getElementById("main");
 const detailsSection = document.getElementById("details-section");
 
 // functions
-
 const displayFoodDetails = id => {
     const urlId = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     fetch(urlId)
         .then(res => res.json())
         .then(data => {
-            detailsSection.innerHTML = "";
+            detailsSection.innerHTML = ""; // this line clears previously searched items
             // fetched api with id.so only one element.so we take 0'th index of array 
             const meal = data["meals"][0];
             const detailsDiv = document.createElement("div");
@@ -26,11 +26,13 @@ const displayFoodDetails = id => {
             detailsSection.style.margin = "50px";
             detailsSection.style.padding = "20px";
         });
+    // this line automatically scrolls at top because we have shown details at top
+    window.scrollTo(0, 0);
 }
 
 const process = data => {
     mainSection.innerHTML = ""; // this line clears previously searched items
-    detailsSection.innerHTML = "";
+    detailsSection.innerHTML = ""; // this line clears previously searched items
     detailsSection.style = "None";
     const meals = data["meals"];
     if (meals === null) {
